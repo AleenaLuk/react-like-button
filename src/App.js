@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      likes: 0,
+    }
+
+    this.addLike = this.addLike.bind(this);
+
+  }
+
+  addLike() {
+
+    // https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous
+
+    // this.setState({likes: this.state.likes + 1}); // WRONG see link above
+
+    // this.setState(function(state, props) {
+    //   this.setState({ likes: this.state.likes + 1 });
+    // });
+
+    this.setState((state, props) => this.setState({ likes: this.state.likes + 1 }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.addLike}>{ this.state.likes } { this.state.likes === 1 ? 'like' : 'likes' }</button>
+
+    );
+  }
 }
+
+// function App() {
+//   return (
+//     <button>0 likes</button>
+//   );
+// }
 
 export default App;

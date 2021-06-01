@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css","webpack://src/App.css"],"names":[],"mappings":"AAAA,MACE,iBAAkB,CAClB,eACF,CCHA,OACE,WAAY,CACZ,YAAa,CACb,kBACF","file":"main.136d15a4.chunk.css","sourcesContent":["#root {\n  text-align: center;\n  margin-top: 50px;\n}\n","button {\n  width: 200px;\n  height: 100px;\n  border-radius: 10px;\n}\n"]}
